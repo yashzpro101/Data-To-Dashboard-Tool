@@ -12,7 +12,7 @@ import pandas as pd
 
 # Importing the team's modules
 import data_handler as dh # Role 1's file
-import visuals as vs      # Subhakanta's file (Role 2)
+import visuals as vs      # Jitansu's file (Role 2)
 
 # Set the page to be wide for better chart viewing
 st.set_page_config(page_title="Interactive Data Explorer", layout="wide")
@@ -43,21 +43,21 @@ if uploaded_file is not None:
     
     with col1:
         st.markdown("#### Category Analysis")
-        # Calling Subhakanta's bar chart function
+        # Calling jitansu's bar chart function
         bar_fig = vs.create_bar_chart(df, x_axis=df.columns[0], y_axis=df.columns[1])
         # st.plotly_chart is required to render Plotly figures!
         st.plotly_chart(bar_fig, use_container_width=True)
         
     with col2:
         st.markdown("#### Distribution")
-        # Calling Subhakanta's pie chart function
+        # Calling Jitansu's pie chart function
         pie_fig = vs.create_pie_chart(df, names_col=df.columns[0], values_col=df.columns[1])
         st.plotly_chart(pie_fig, use_container_width=True)
 
     st.markdown("---")
     st.markdown("#### Feature Correlation")
     
-    # Calling Subhakanta's seaborn heatmap function
+    # Calling Jitansu's seaborn heatmap function
     heatmap_fig = vs.create_correlation_heatmap(df)
     
     if heatmap_fig is not None:
