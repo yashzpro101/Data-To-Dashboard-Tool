@@ -9,6 +9,46 @@ and visualization modules for our team's scholarship portfolio project.
 """
 import streamlit as st
 import pandas as pd
+import streamlit as st
+import pandas as pd
+import plotly.express as px
+
+# --- ADD THIS CSS BLOCK FOR THE DESIGN ---
+st.markdown("""
+<style>
+/* 1. Pure Black Background */
+.stApp {
+    background-color: #050505;
+}
+
+/* 2. The 'Black Work Box' with Neon White Aurora Glow */
+.block-container {
+    background-color: #121212;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0px 0px 40px rgba(255, 255, 255, 0.15); /* The blurred neon white glow */
+    
+/* 3. The Slide-In Animation */
+    animation: slideUpFade 1s ease-out;
+}
+
+/* The Animation Logic */
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
+""", unsafe_allow_html=True)
+# --- END OF CSS BLOCK ---
+
+# ... (Keep all your existing chart and data code exactly as it is down here) ...
+st.title("Data Explorer")
 
 # Importing the team's modules
 import data_handler as dh # Role 1's file
